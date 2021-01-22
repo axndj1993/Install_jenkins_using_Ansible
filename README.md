@@ -6,7 +6,7 @@ pipeline{
     stages{
         stage("checkout"){
             steps{
-                git 'https://github.com/axndj1993/myapp-ansible.git'
+                https://github.com/axndj1993/Install_jenkins_using_Ansible.git
                 echo 'success'
             }
         }
@@ -14,6 +14,7 @@ pipeline{
         stage("Execute Ansible"){
             steps{
                 ansiblePlaybook credentialsId: 'private-key', disableHostKeyChecking: true, installation: 'Ansible', inventory: 'dev.inv', playbook: 'site.yml'
+                echo "success"
             }
         }
     }
