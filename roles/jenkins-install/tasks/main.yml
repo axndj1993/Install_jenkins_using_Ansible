@@ -24,15 +24,26 @@
   yum: 
     name: jenkins
     state: present
+    
+- name: Install Maven
+  yum: 
+    name: maven
+    state: present
+    
+- name: Install Ansible
+  yum: 
+    name: ansible
+    state: present
 
 - name: Start Jenkins service
   systemd:
      name: jenkins
      state: started
      enabled: true
-- name: sleep for 30 seconds
+     
+- name: sleep for 45 seconds
   wait_for:
-     timeout: 30
+     timeout: 45
 
 - name: Init password Jenkins
   become: yes
