@@ -6,5 +6,4 @@ pipeline{
                 echo "success"
             }
         }
-    }
 }
